@@ -20,8 +20,8 @@ RUN composer install
 
 RUN a2enmod rewrite
 
-RUN chown -R www-data:www-data /var/www/html/storage
-RUN chown -R www-data:www-data /var/www/html/bootstrap/cache
+RUN chmod -R 775 storage bootstrap/cache
+RUN chown -R www-data:www-data storage bootstrap/cache
 
 COPY . /var/www/html
 
