@@ -6,9 +6,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     libzip-dev \
     libpng-dev \
-    zip \
-    nodejs \
-    npm
+    libpq-dev \
+    zip
 
 RUN docker-php-ext-install zip pdo pdo_mysql pdo_pgsql pgsql gd
 
@@ -20,13 +19,12 @@ COPY . .
 
 RUN composer install
 
-RUN npm install
-RUN npm run build
-
 RUN a2enmod rewrite
 
 RUN chmod -R 775 storage bootstrap/cache
 RUN chown -R www-data:www-data storage bootstrap/cache
+
+COPY . /var/www/html
 
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
