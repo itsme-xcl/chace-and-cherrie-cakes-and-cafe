@@ -205,10 +205,13 @@ class OrderController extends Controller
 
                 $filename = time() . '_' . $file->getClientOriginalName();
 
-                $file->move(
-                    public_path('payment_proofs'),
-                    $filename
-                );
+                $path = public_path('payment_proofs');
+
+                    if (!file_exists($path)) {
+                        mkdir($path, 0777, true);
+                    }
+
+                    $file->move($path, $filename);
 
                 $proofPath = 'payment_proofs/' . $filename;
             }
