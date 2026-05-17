@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y \
     curl \
     libzip-dev \
     libpng-dev \
-    zip
+    zip \
+    nodejs \
+    npm
 
 RUN docker-php-ext-install zip pdo pdo_mysql gd
 
@@ -23,16 +25,10 @@ RUN npm run build
 
 RUN a2enmod rewrite
 
-RUN chmod -R 777 storage bootstrap/cache
+RUN chmod -R 775 storage bootstrap/cache
 RUN chown -R www-data:www-data storage bootstrap/cache
 
-COPY . /var/www/html
-
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
-
-RUN mkdir -p storage/framework/views
-RUN chmod -R 777 storage
-RUN chmod -R 777 bootstrap/cache
 
 EXPOSE 10000
 
