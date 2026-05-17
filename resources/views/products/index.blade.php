@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select a Cake</title>
 
-    <link rel="stylesheet" href="{{ asset('css/product.css') }}">
+    <link rel="stylesheet" href="/css/product.css">
 </head>
 <body>
 

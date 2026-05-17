@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delivery Dashboard</title>
 
-    <link rel="stylesheet" href="{{ asset('css/adminaccount.css') }}">
+    <link rel="stylesheet" href="/css/adminaccount.css">
 
     <style>
 

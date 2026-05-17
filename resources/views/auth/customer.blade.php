@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Login - Chace and Cherrie Cakes</title>
 
-    <link rel="stylesheet" href="{{ asset('css/customer.css') }}">
+    <link rel="stylesheet" href="/css/customer.css">
 </head>
 <body>
 

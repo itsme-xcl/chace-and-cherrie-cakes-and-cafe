@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Cashier Sales</title>
-<link rel="stylesheet" href="{{ asset('css/adminaccount.css') }}">
+<link rel="stylesheet" href="/css/adminaccount.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 

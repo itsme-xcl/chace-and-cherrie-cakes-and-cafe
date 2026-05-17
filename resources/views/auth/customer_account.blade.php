@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>My Orders - Chace and Cherrie Cakes</title>
 
-    <link rel="stylesheet" href="{{ asset('css/orders.css') }}">
+    <link rel="stylesheet" href="/css/orders.css">
 
     <style>
         .full-width {

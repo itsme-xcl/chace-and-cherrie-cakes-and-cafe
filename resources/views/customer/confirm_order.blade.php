@@ -5,7 +5,7 @@
 
     <title>Confirm Order</title>
 
-    <link rel="stylesheet" href="{{ asset('css/confirm_order.css') }}">
+    <link rel="stylesheet" href="/css/confirm_order.css">
 
 </head>
 

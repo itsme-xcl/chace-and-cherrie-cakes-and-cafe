@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Cashier Dashboard</title>
-<link rel="stylesheet" href="{{ asset('css/adminaccount.css') }}">
+<link rel="stylesheet" href="/css/adminaccount.css">
 </head>
 
 <body>

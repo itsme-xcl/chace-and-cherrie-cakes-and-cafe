@@ -6,7 +6,7 @@
     <title>Login - Chace and Cherrie Cakes</title>
 
     <!-- LINK YOUR CSS -->
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+   <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
 

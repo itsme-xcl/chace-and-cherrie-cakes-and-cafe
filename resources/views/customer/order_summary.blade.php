@@ -8,8 +8,7 @@
 
     <title>Order Summary</title>
 
-    <link rel="stylesheet"
-          href="{{ asset('css/order-summary.css') }}">
+    <link rel="stylesheet" href="/css/order-summary.css">
 
 </head>
 

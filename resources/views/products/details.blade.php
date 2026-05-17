@@ -7,8 +7,7 @@
 
     <title>{{ $product->name }}</title>
 
-    <link rel="stylesheet"
-          href="{{ asset('css/product-details.css') }}">
+   <link rel="stylesheet" href="/css/product-details.css">
 </head>
 <body>
 
