@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     nodejs \
     npm
 
-RUN docker-php-ext-install zip pdo pdo_mysql gd
+RUN docker-php-ext-install zip pdo pdo_mysql pdo_pgsql pgsql gd
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
