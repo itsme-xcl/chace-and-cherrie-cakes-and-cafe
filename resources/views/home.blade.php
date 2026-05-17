@@ -3,13 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Chase & Cherie Cakes</title>
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-<style>
-body{
-    background:red !important;
-}
-</style>
-
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
