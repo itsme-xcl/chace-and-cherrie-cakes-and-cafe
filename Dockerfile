@@ -19,8 +19,6 @@ COPY . .
 
 RUN composer install
 
-RUN php artisan migrate --force
-
 RUN a2enmod rewrite
 
 RUN mkdir -p storage/framework/views \
@@ -36,4 +34,6 @@ RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available
 
 EXPOSE 10000
 
-CMD sed -i "s/80/${PORT}/g" /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf && apache2-foreground
+CMD php artisan migrate --force && \
+sed -i "s/80/${PORT}/g" /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf && \
+apache2-foreground
