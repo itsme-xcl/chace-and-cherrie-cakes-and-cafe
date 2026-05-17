@@ -195,7 +195,8 @@ class OrderController extends Controller
 
         // UPLOAD PAYMENT PROOF
                 // PAYMENT PROOF
-        $proofPath = null;
+        // PAYMENT PROOF
+            $proofPath = null;
 
             if ($request->hasFile('payment_proof')) {
 
@@ -205,18 +206,12 @@ class OrderController extends Controller
 
                     $filename = time() . '_' . $file->getClientOriginalName();
 
-                    // CREATE DIRECTORY IF NOT EXIST
-                    $destinationPath = public_path('payment_proofs');
-
-                    if (!file_exists($destinationPath)) {
-                        mkdir($destinationPath, 0777, true);
-                    }
-
-                    // MOVE FILE
-                    $file->move($destinationPath, $filename);
-
-                    // SAVE PATH
-                    $proofPath = 'payment_proofs/' . $filename;
+                    // STORE FILE INSIDE storage/app/public/payment_proofs
+                    $proofPath = $file->storeAs(
+                        'payment_proofs',
+                        $filename,
+                        'public'
+                    );
                 }
             }
 

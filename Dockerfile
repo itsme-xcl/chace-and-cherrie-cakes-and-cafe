@@ -34,6 +34,8 @@ RUN php artisan migrate --force
 
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
+RUN php artisan storage:link
+
 EXPOSE 10000
 
 CMD sed -i "s/80/${PORT}/g" /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf && \
