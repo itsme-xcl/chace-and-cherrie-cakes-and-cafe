@@ -18,6 +18,9 @@ COPY . .
 
 RUN composer install
 
+RUN npm install
+RUN npm run build
+
 RUN a2enmod rewrite
 
 RUN chmod -R 777 storage bootstrap/cache
