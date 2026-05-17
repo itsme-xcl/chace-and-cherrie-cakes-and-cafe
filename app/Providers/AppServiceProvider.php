@@ -1,39 +1,28 @@
-FROM php:8.2-apache
+<?php
 
-RUN apt-get update && apt-get install -y \
-    unzip \
-    git \
-    curl \
-    libzip-dev \
-    libpng-dev \
-    libpq-dev \
-    zip
+namespace App\Providers;
 
-RUN docker-php-ext-install zip pdo pdo_mysql pdo_pgsql pgsql gd
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     */
+    public function register(): void
+    {
+        //
+    }
 
-WORKDIR /var/www/html
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
+    {
+        if(env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
+        }
+}
 
-COPY . .
-
-RUN composer install
-
-RUN php artisan migrate --force
-
-RUN a2enmod rewrite
-
-RUN mkdir -p storage/framework/views \
-    storage/framework/cache \
-    storage/framework/sessions \
-    storage/logs \
-    bootstrap/cache
-
-RUN chmod -R 777 storage bootstrap/cache
-RUN chown -R www-data:www-data storage bootstrap/cache
-
-RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
-
-EXPOSE 10000
-
-CMD sed -i "s/80/${PORT}/g" /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf && apache2-foreground
+}

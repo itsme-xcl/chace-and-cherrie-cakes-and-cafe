@@ -19,6 +19,8 @@ COPY . .
 
 RUN composer install
 
+RUN php artisan migrate --force
+
 RUN a2enmod rewrite
 
 RUN mkdir -p storage/framework/views \
