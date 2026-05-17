@@ -199,23 +199,21 @@ class OrderController extends Controller
 
         if ($request->hasFile('payment_proof')) {
 
-            $file = $request->file('payment_proof');
+                $file = $request->file('payment_proof');
 
-            if ($file->isValid()) {
+                if ($file->isValid()) {
 
-                $filename = time() . '_' . $file->getClientOriginalName();
+                    $filename = time() . '_' . $file->getClientOriginalName();
 
-                $path = public_path('payment_proofs');
+                    $path = $file->storeAs(
+                        'payment_proofs',
+                        $filename,
+                        'public'
+                    );
 
-                    if (!file_exists($path)) {
-                        mkdir($path, 0777, true);
-                    }
-
-                    $file->move($path, $filename);
-
-                $proofPath = 'payment_proofs/' . $filename;
+                    $order->payment_proof = $path;
+                }
             }
-        }
 
         // ADDONS
         $addons = null;
