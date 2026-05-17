@@ -27,6 +27,10 @@ COPY . /var/www/html
 
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
+RUN mkdir -p storage/framework/views
+RUN chmod -R 777 storage
+RUN chmod -R 777 bootstrap/cache
+
 EXPOSE 10000
 
 CMD sed -i "s/80/${PORT}/g" /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf && apache2-foreground
