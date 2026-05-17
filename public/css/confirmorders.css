@@ -1,0 +1,298 @@
+*{
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+body{
+    margin:0;
+    background:linear-gradient(135deg,#ffe4ef,#ffd6ea);
+    min-height:100vh;
+    padding:40px 20px;
+    color:#111827;
+}
+
+/* =========================
+   WRAPPER
+========================= */
+.confirm-wrapper{
+    max-width:1250px;
+    margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+.confirm-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.confirm-header h1{
+    font-size:44px;
+    color:#db2777;
+    margin-bottom:10px;
+    font-weight:800;
+}
+
+.confirm-header p{
+    color:#6b7280;
+    font-size:16px;
+}
+
+/* =========================
+   GRID
+========================= */
+.confirm-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:25px;
+    align-items:start;
+}
+
+/* =========================
+   CARD
+========================= */
+.confirm-card{
+    background:white;
+
+    border-radius:28px;
+
+    padding:35px;
+
+    border:1px solid #fbcfe8;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.08),
+        0 4px 10px rgba(236,72,153,0.08);
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+.section-title{
+    font-size:28px;
+    font-weight:800;
+    margin-bottom:28px;
+    color:#111827;
+
+    border-left:5px solid #ec4899;
+    padding-left:14px;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.summary-item{
+    background:#fff0f6;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    border:1px solid #fbcfe8;
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.summary-label{
+    font-size:13px;
+    color:#6b7280;
+    font-weight:600;
+}
+
+.summary-value{
+    font-size:16px;
+    font-weight:700;
+    color:#111827;
+}
+
+.full-width{
+    grid-column:1 / -1;
+}
+
+/* =========================
+   PRICE BOX
+========================= */
+.price-box{
+    margin-top:28px;
+
+    background:linear-gradient(
+        to right,
+        #ec4899,
+        #db2777
+    );
+
+    border-radius:24px;
+
+    padding:25px;
+
+    color:white;
+}
+
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:18px;
+
+    margin-bottom:14px;
+}
+
+.price-row:last-child{
+    margin-bottom:0;
+}
+
+.price-row span:last-child{
+    font-weight:800;
+}
+
+/* =========================
+   PAYMENT
+========================= */
+.payment-box{
+    background:#fff0f6;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    border:1px solid #fbcfe8;
+
+    text-align:center;
+}
+
+.qr-image{
+    width:220px;
+    border-radius:18px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+        0 10px 18px rgba(0,0,0,0.15);
+}
+
+.payment-info{
+    margin-top:10px;
+}
+
+.payment-info p{
+    margin:10px 0;
+    font-size:15px;
+}
+
+.payment-warning{
+    margin-top:20px;
+
+    background:#ffe4ef;
+
+    color:#db2777;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    font-weight:700;
+}
+
+/* =========================
+   UPLOAD
+========================= */
+.upload-section{
+    margin-top:30px;
+}
+
+.upload-label{
+    display:block;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+    color:#374151;
+}
+
+.upload-section input[type="file"]{
+    width:100%;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    border:2px dashed #f9a8d4;
+
+    background:#fff0f6;
+
+    cursor:pointer;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.confirm-btn{
+    width:100%;
+
+    margin-top:30px;
+
+    background:linear-gradient(
+        to right,
+        #ec4899,
+        #db2777
+    );
+
+    border:none;
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    font-size:18px;
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.confirm-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 20px rgba(236,72,153,0.25);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:900px){
+
+    .confirm-grid{
+        grid-template-columns:1fr;
+    }
+
+    .summary-grid{
+        grid-template-columns:1fr;
+    }
+
+    .confirm-header h1{
+        font-size:34px;
+    }
+
+    .confirm-card{
+        padding:25px;
+    }
+
+    .qr-image{
+        width:180px;
+    }
+}

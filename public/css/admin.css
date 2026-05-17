@@ -1,0 +1,120 @@
+/* General Styles */
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-container {
+    text-align: center;
+}
+
+/* Login Card Styles */
+.login-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust as needed */
+    margin-top: 20px;
+}
+
+.back-link {
+    display: block;
+    text-align: left;
+    margin-bottom: 15px;
+    color: #007bff; /* Example color */
+    text-decoration: none;
+}
+
+/* Icon Styles */
+.admin-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.admin-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff; /* Example color */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+/* Title Styles */
+.login-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.login-form .form-group {
+    margin-bottom: 15px;
+}
+
+.login-form .form-label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-form .input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.login-form .input-icon {
+    margin-right: 5px;
+    color: #777;
+}
+
+.login-form .form-input {
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+}
+
+/* Button Styles */
+.btn-login {
+    background-color: #007bff; /* Example color */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.btn-login:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+}
+
+/* Password Toggle (Optional - requires JavaScript) */
+.login-form .password-input {
+    width: calc(100% - 30px); /* Adjust for toggle button */
+}
+
+.login-form .toggle-password {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 5px;
+}
